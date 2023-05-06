@@ -11,6 +11,9 @@ class DownloaderDlp:
         self.url = url
 
     def fetch_streams(self):
+        """
+        Fetch the list of available stream formats.
+        """
         ydl_options = {
             'quiet': True,
             'no_warnings': True,
@@ -34,6 +37,9 @@ class DownloaderDlp:
         return reduced_formats
     
     def get_title(self):
+        """
+        Fetch the video title.
+        """
         ydl_options = {
             'quiet': True,
             'no_warnings': True,
@@ -46,6 +52,12 @@ class DownloaderDlp:
         return title
     
     def download(self, format_id):
+        """
+        Download the video.
+
+        Args:
+            format_id (str): The format id selected.
+        """
         ydl_options = {
             'format': format_id
         }
