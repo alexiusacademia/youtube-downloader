@@ -1,4 +1,4 @@
-from downloader import Downloader, DownloaderDlp
+from downloader import DownloaderDlp
 
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -37,7 +37,7 @@ class MainFrame(tk.Frame):
             return
         
         self.downloader = DownloaderDlp(self.txt_url.get())
-        
+
         streams = self.downloader.fetch_streams()
 
         columns = list(streams[0].keys())
