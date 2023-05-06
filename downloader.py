@@ -33,6 +33,18 @@ class DownloaderDlp:
 
         return reduced_formats
     
+    def get_title(self):
+        ydl_options = {
+            'quiet': True,
+            'no_warnings': True,
+            'skip_download': True
+        }
+        with yt_dlp.YoutubeDL(ydl_options) as ydl:
+            info_dict = ydl.extract_info(self.url, download=False)
+            title = info_dict.get('title', '')
+
+        return title
+    
     def download(self, format_id):
         ydl_options = {
             'format': format_id

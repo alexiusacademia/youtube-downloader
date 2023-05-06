@@ -38,6 +38,8 @@ class MainFrame(tk.Frame):
         
         self.downloader = DownloaderDlp(self.txt_url.get())
 
+        self.lbl_video_title.config(text=self.downloader.get_title())
+
         streams = self.downloader.fetch_streams()
 
         columns = list(streams[0].keys())
