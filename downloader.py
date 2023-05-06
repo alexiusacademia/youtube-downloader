@@ -1,5 +1,4 @@
 import ssl
-from pytube import YouTube
 import yt_dlp
 
 # Disable ssl checking
